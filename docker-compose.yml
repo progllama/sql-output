@@ -1,13 +1,12 @@
 version: '3'
 services:
-  db:
-    container_name: postgres
-    build: .
-    ports:
-      - 5433:5432
+  pgsql:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pgsql
+    tty: true
     volumes:
       - ./db:/var/lib/postgresql/data
-      - ./sample-db:/var/lib/postgresql/data/sample-db
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
+    ports:
+      - '25432:5432'

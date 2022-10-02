@@ -1,14 +1,25 @@
-# docker-composeの実行
-```
-$ docker-compose build
-$ docker-compose up
-```
+# 環境構築
 
-# postgrsqlへ入る
+## 必要なソフト
 
-```docker exec -it postgres bash```
+- Docker
 
+## ビルド
 
-# shellへ入ったらpsqlで入ります。
+```docker-compose build```
 
-```psql -U admin```
+## コンテナの起動
+
+```docker-compose up -d```
+
+## コンテナに入る
+
+```docker exec -u postgres -it pgsql bash```
+
+## クライアントの起動
+
+```psql```
+
+## 参考
+
+[【PostgreSQLをインストール】Dockerを使って15分以内に作成する！ | Study Infra](https://study-infra.com/postgresql-install-docker/)
